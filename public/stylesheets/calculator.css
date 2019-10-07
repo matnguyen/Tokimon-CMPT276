@@ -1,0 +1,94 @@
+body {
+    font: normal 100% Cambria,Georgia,"Times New Roman",Times,serif;
+    margin: 0;
+    background: #a6192e; 
+}
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    background: #ffffff;
+    border-top: 25px solid #3d3935;
+    border-bottom: 25px solid #3d3935;
+}
+
+#content {
+    padding-left: 2%;
+    padding-top: 4%;
+    padding-bottom: 1%;
+}
+
+#calculator_content {
+    background: #DBE8EC;
+    width: 70%;
+    padding-left: 1%;
+    padding-top: 1%;
+
+    overflow: hidden;  
+}
+
+table{
+    width: 98.5%;
+    border-collapse: collapse;
+    border-spacing: 2px;
+}
+
+th {
+    width: 12em;
+    text-align: left;
+    padding: .25em .5em;
+    background-color: #eee;
+    border: 1px solid #bbb;
+}
+
+td {
+    width: 12em;
+    text-align: left;
+    padding: .25em .5em;
+    border: 1px solid #bbb;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type="number"] {
+    width: 50%;
+    margin: 3px;
+    padding: 8px;
+}
+
+input[type="button"] {
+    border-radius: 5px;
+    padding: .25em 1em;
+    margin: 0.5em;
+    font-size: 1em;
+    font-family: "DINWebMedium",sans-serif;
+    color: #FFF;
+    min-width: 100px;
+    float: right;
+    background-color: #a6192e;
+    cursor: pointer;
+}
+
+#additional_grade_button {
+    border-radius: 5px;
+    padding: .25em 1em;
+    font-size: 1em;
+    font-family: "DINWebMedium",sans-serif;
+    color: #FFF;
+    min-width: 100px;
+    float: left;
+    background-color: #a6192e;
+    cursor: pointer;
+    position: relative;
+    top: -20px;
+    right: 10px;
+}
+
+#final_exam_grade {
+    position: relative;
+    top: -11px;
+    margin-left: 150px;
+}

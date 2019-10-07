@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CourSys - Formula Tester</title>
+    <link rel="stylesheet" href="stylesheets/calculator.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/calculator.js" defer></script>
+</head>
+
+<html lang="eng">
+    <body>
+        <main>
+            <div id="content">
+                <h1>Grade Calculator</h1>
+                <div id="calculator_content">
+                    <h2 style="color: #a6192e">Activities</h2>
+                    <p>Give grades to the numeric activities:</p>
+                    <table id='calculator_table'>
+                        <tr>
+                            <th>Name</th>
+                            <th>Short Name</th>
+                            <th>Weight</th>
+                            <th>Grade</th>
+                            <th class="percent">Percent</th>
+                        </tr>
+                        <tr>
+                            <td>Activity 1</td>
+                            <td>A1</td>
+                            <td><input type="number"/></td>
+                            <td><input onkeyup="updatePercentage(this)" type="number"/>/
+                                <input onkeyup="updatePercentage(this)" type="number" /></td>
+                            <td class="percent"></td>
+                        </tr>
+                        <tr>
+                            <td>Activity 2</td>
+                            <td>A2</td>
+                            <td><input type="number"/></td>
+                            <td><input onkeyup="updatePercentage(this)" type="number" />/
+                                <input onkeyup="updatePercentage(this)" type="number" /></td>
+                            <td class="percent"></td>
+                        </tr>
+                        <tr>
+                            <td>Activity 3</td>
+                            <td>A3</td>
+                            <td><input type="number" /></td>
+                            <td><input onkeyup="updatePercentage(this)" type="number" />/
+                                <input onkeyup="updatePercentage(this)" type="number" /></td>
+                            <td class="percent"></td>
+                        </tr>
+                        <tr>
+                            <td>Activity 4</td>
+                            <td>A4</td>
+                            <td><input type="number"/></td>
+                            <td><input onkeyup="updatePercentage(this)" type="number" />/
+                                <input onkeyup="updatePercentage(this)" type="number" /></td>
+                            <td class="percent"></td>
+                        </tr>
+                    </table>
+                    <input type="button" value="ADD ACTIVITY" onclick="addRow()"/>
+                    <h2 style="color: #a6192e">Result</h2>
+                    <h3 id="result"></h3>
+                    <input type="button" value="WEIGHTED" onclick="weighted()"/>
+                    <input type="button" value="MEAN" onclick="mean()"/>
+                    <p>&nbsp</p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

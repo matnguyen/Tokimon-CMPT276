@@ -1,0 +1,6 @@
+{
+  "name": "Grade Calculator",
+  "description": "A calculator for computing mean and weighted grades",
+  "repository": "https://github.com/matnguyen/Calculator-CMPT276",
+  "keywords": ["node", "grade", "heroku", "calculator"]
+}
