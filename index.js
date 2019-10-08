@@ -13,7 +13,8 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .engine('html', require('ejs').renderFile)
   .set('view engine', 'html')
-  .get('/', (req, res) => res.render('pages/calculator'))
+  .get('/', (req, res) => res.render('pages/main'))
+  .set('view engine', 'ejs')
   .get('/db', async (req, res) => {
     try {
       const client = await pool.connect()
