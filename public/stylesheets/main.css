@@ -6,10 +6,29 @@ body {
 
 main {
     width: 90%;
-    margin: 0 auto;
+    margin-left: 120px;
     background: #ffffff;
     border-top: 25px solid #3d3935;
     border-bottom: 25px solid #3d3935;
+}
+
+.sidebar {
+    height: 100%;
+    width: 120px;
+    position: fixed;
+    z-index: 1;
+    background-color: #a6192e;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    font-size: 25px;
+    color: #111111;
+    display: block;
 }
 
 #content {
