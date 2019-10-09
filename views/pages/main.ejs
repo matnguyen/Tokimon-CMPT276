@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tokimon Database</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<html lang="eng">
+    <body>
+        <main>
+            <button>Add Tokimon</button> 
+            <h2>Database Results</h2>
+            
+            <ul>
+                <% results.forEach(function(r) { %>
+                    <li><%= r.id %> - <%= r.name %></li>
+                <% }); %>
+            </ul>
+            
+            </div>
+        </main>
+    </body>
+</html>
