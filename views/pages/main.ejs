@@ -11,16 +11,60 @@
 <html lang="eng">
     <body>
         <main>
-            <button>Add Tokimon</button> 
-            <h2>Database Results</h2>
+            <h1>Tokimon Database</h1>
             
-            <ul>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Weight</th>
+                    <th>Height</th>
+                    <th>Fly</th>
+                    <th>Fight</th>
+                    <th>Fire</th>
+                    <th>Water</th> 
+                    <th>Electric</th>
+                    <th>Ice</th>
+                    <th>Total</th>
+                    <th>Trainer</th>
+                    <th>Gender</th>
+                    <th>Friendship</th>
+                    <th>Experience</th> 
+                </tr>
+                <% if (results.length) {
+                    for (var i = 0; i < results.length; i++) { %>
+                <tr>
+                    <td><%= results[i].field1 %></td>
+                    <td><%= results[i].field2 %></td>
+                    <td><%= results[i].field3 %></td>
+                    <td><%= results[i].field4 %></td>
+                    <td><%= results[i].field5 %></td>
+                    <td><%= results[i].field6 %></td>
+                    <td><%= results[i].field7 %></td> 
+                    <td><%= results[i].field8 %></td>
+                    <td><%= results[i].field9 %></td>
+                    <td><%= results[i].field10 %></td>
+                    <td><%= results[i].field11 %></td>
+                    <td><%= results[i].field12 %></td>
+                    <td><%= results[i].field13 %></td>
+                    <td><%= results[i].field14 %></td> 
+                </tr>
+                    <% }
+                }
+                else { %>
+                <tr>
+                    <td colspan="15">No Tokimon</td>
+                </tr>
+                <% } %>
+
+            </table>
+            
+            <!-- <ul>
                 <% results.forEach(function(r) { %>
                     <li><%= r.id %> - <%= r.name %></li>
-                <% }); %>
-            </ul>
-            
-            </div>
+                    <% }); %>
+                </ul> -->
+                
+            <button>Add Tokimon</button> 
         </main>
     </body>
 </html>
