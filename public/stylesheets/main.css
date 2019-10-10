@@ -1,15 +1,13 @@
 body {
     font: normal 100% Cambria,Georgia,"Times New Roman",Times,serif;
     margin: 0;
-    background: #a6192e; 
+    background: #ffffff; 
 }
 
 main {
-    width: 90%;
     margin-left: 120px;
     background: #ffffff;
-    border-top: 25px solid #3d3935;
-    border-bottom: 25px solid #3d3935;
+    border-top: 25px solid #00bbff;
 }
 
 .sidebar {
@@ -17,11 +15,12 @@ main {
     width: 120px;
     position: fixed;
     z-index: 1;
-    background-color: #a6192e;
+    background-color: #00bbff;
     top: 0;
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
+    border-top: 25px solid #00bbff;
 }
 
 .sidebar a {
@@ -31,22 +30,98 @@ main {
     display: block;
 }
 
-#content {
-    padding-left: 2%;
-    padding-top: 4%;
-    padding-bottom: 1%;
+.sidebar button {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    border: none;
+    padding: 12px 5px;
+    color: #555555;
+    background-color: #00bbff;
+    border: 2px solid #555555;
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
-#calculator_content {
-    background: #DBE8EC;
-    width: 70%;
-    padding-left: 1%;
-    padding-top: 1%;
+.sidebar button:hover {
+    background-color: #555555; 
+    color: #ffffff;
+}
 
-    overflow: hidden;  
+h1 {
+    text-align: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #d8e3e6;
+    background-color: rgba(0,0,0,0.4)
+}
+
+.modalContent {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+}
+
+.modalContent h2 {
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.form-style {
+    margin: auto;
+    max-width: 400px;
+    padding: 20px 12px 10px 20px;
+}
+
+.form-style label {
+    margin-bottom: 15px;
+    padding: 0;
+    display: block;
+    font-weight: bold;
+}
+
+.form-style span {
+    width: 100px;
+    float: left;
+    padding-top: 8px;
+    padding-right: 5px;
+}
+
+.form-style input[type=text],
+.form-style input[type=number],
+.form-style select {
+	box-sizing: border-box;
+	border: 1px solid #C2C2C2;
+	box-shadow: 1px 1px 4px #EBEBEB;
+	border-radius: 3px;
+	padding: 7px;
+    outline: none;	
+    width: 50%;
+}
+
+.form-style input[type=submit] {
+    background: #00bbff;
+	padding: 8px 15px 8px 15px;
+	border: none;
+	color: #fff;
 }
 
 table{
+    margin: auto;
     width: 98.5%;
     border-collapse: collapse;
     border-spacing: 2px;
@@ -72,8 +147,16 @@ input::-webkit-inner-spin-button {
     margin: 0; 
 }
 
-input[type="number"] {
-    width: 50%;
+/* input[type="number"] {
+    width: 10%;
+    margin-left: 3px;
+    margin-right: 50px;
+    margin-top: 20px;
+    padding: 8px;
+}
+
+input[type="text"] {
+    width: 20%;
     margin: 3px;
     padding: 8px;
 }
@@ -89,25 +172,4 @@ input[type="button"] {
     float: right;
     background-color: #a6192e;
     cursor: pointer;
-}
-
-#additional_grade_button {
-    border-radius: 5px;
-    padding: .25em 1em;
-    font-size: 1em;
-    font-family: "DINWebMedium",sans-serif;
-    color: #FFF;
-    min-width: 100px;
-    float: left;
-    background-color: #a6192e;
-    cursor: pointer;
-    position: relative;
-    top: -20px;
-    right: 10px;
-}
-
-#final_exam_grade {
-    position: relative;
-    top: -11px;
-    margin-left: 150px;
-}
+} */

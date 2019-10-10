@@ -10,11 +10,39 @@
 
 <html lang="eng">
     <div class="sidebar">
-        <a href="#">Add Tokimon</a>
+        <button id="addBtn">Add Tokimon</button>
     </div>
 
+    <div id="addModal" class="modal">
+        <div id="addModalContent" class="modalContent">
+            <h2>Add a Tokimon to the database</h2>
+            <form>
+                <div class="form-style">
+                    <label><span>Name </span><input type="text" name="name" placeholder="Name"></label>
+                    <label><span>Weight </span><input type="number" name="weight" placeholder="0"></label>
+                    <label><span>Height </span><input type="number" name="height" placeholder="0"></label>
+                    <label><span>Fly </span><input type="number" name="fly" placeholder="0"></label>
+                    <label><span>Fight </span><input type="number" name="fight" placeholder="0"></label>
+                    <label><span>Fire </span><input type="number" name="fire" placeholder="0"></label>
+                    <label><span>Water </span><input type="number" name="water" placeholder="0"></label>
+                    <label><span>Electric </span><input type="number" name="electric" placeholder="0"></label>
+                    <label><span>Ice </span><input type="number" name="ice" placeholder="0"></label>
+                    <label><span>Trainer </span><input type="text" name="trainer" placeholder="Trainer"></label>
+                    <label><span>Friendship </span><input type="number" name="friendship" placeholder="0"></label>
+                    <label><span>Experience </span><input type="number" name="experience" placeholder="0"></label>
+                    <label><span>Gender</span><select name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select></label>
+                    <label><span></span><input type="submit" value="Submit"></label>
+                </div>
+            </form>
+        </div>        
+    </div>
+
+
     <body>
-        <main>
+        <main> 
             <h1>Tokimon Database</h1>
             
             <table>
@@ -61,7 +89,6 @@
                 <% } %>
 
             </table>            
-            <button>Add Tokimon</button> 
         </main>
     </body>
 </html>
