@@ -73,6 +73,8 @@ h1 {
     padding: 20px;
     border: 1px solid #888;
     width: 20%;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
 }
 
 .modalContent h2 {
