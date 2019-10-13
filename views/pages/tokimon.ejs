@@ -2,17 +2,20 @@
 
 <head>
     <meta charset="utf-8">
+    <% if (results.length) { %>
+    <title>Tokimon Database - <%= results[0].name %></title>
+    <% }
+    else { %> 
     <title>Tokimon Database</title>
-    <link rel="stylesheet" href="stylesheets/main.css">
+    <% } %>
+    <link rel="stylesheet" href="/stylesheets/tokimon.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="scripts/main.js" defer></script>
+    <script src="/scripts/tokimon.js" defer></script>
 </head>
 
 <html lang="eng">
     <div class="sidebar">
-        <button id="addBtn">Add Tokimon</button>
-        <button id="modBtn">Modify Tokimon</button>
-        <button id="delBtn">Delete Tokimon</button>
+        <button id="homeBtn">Home</button>
     </div>
 
     <div id="addModal" class="modal">
@@ -45,7 +48,12 @@
 
     <body>
         <main> 
-            <h1>Tokimon Database</h1>
+            <% if (results.length) { %>
+            <h1><%= results[0].name %></h1>
+            <% }
+            else { %> 
+            <h1>This Tokimon doesn't exist</h1>
+            <% } %>
             
             <table>
                 <tr>

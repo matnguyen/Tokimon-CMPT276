@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
         const client = await pool.connect()
         const result = await client.query('SELECT * FROM Tokimon')
         const results = { 'results': (result) ? result.rows : null}
-        res.render('pages/main', results )
+        res.render('pages/main', results)
         client.release()
       } catch (err) {
         console.error(err)
@@ -31,8 +31,20 @@ app.get('/', async (req, res) => {
       }
     })
 
+app.get('/tokimon/:name', (req, res) => {
+  var query = `SELECT * FROM Tokimon WHERE name='${req.params.name}'`
+  pool.query(query, (error, result) => {
+    if (error) {
+      res.send(error)
+    } else {
+      var results = {'results': result.rows}
+      res.render('pages/tokimon', results)
+    }
+  })
+})
+
 // Adding new Tokimon
-app.post('/', function(req, res) {
+app.post('/add', function(req, res) {
   try {
     var total = parseInt(req.body.fly) + parseInt(req.body.fight) + parseInt(req.body.fire) + 
                 parseInt(req.body.water) + parseInt(req.body.electric) + parseInt(req.body.ice)
