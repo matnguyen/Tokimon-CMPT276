@@ -18,7 +18,7 @@
     <div id="addModal" class="modal">
         <div id="addModalContent" class="modalContent">
             <h2>Add a Tokimon to the database</h2>
-            <form action="/add" method="POST">
+            <form id="addForm" action="/add" method="POST">
                 <div class="form-style">
                     <label><span>Name </span><input type="text" name="name" id="addName" placeholder="Name"></label>
                     <label><span>Weight </span><input type="number" name="weight" id="addWeight" placeholder="0"></label>
@@ -45,7 +45,7 @@
     <div id="delModal" class="modal">
         <div id="delModalContent" class="modalContent">
             <h2>Select a Tokimon to delete</h2>
-            <form action="/del" method="POST">
+            <form id="delForm" action="/del" method="POST">
                 <div class="form-style">
                     <% if (results.length) { %>
                     <label><span>Name</span><select name="delName">
@@ -63,6 +63,26 @@
         </div>
     </div>
 
+    <div id="modModal" class="modal">
+            <div id="modModalContent" class="modalContent">
+                <h2>Select a Tokimon to modify</h2>
+                <% if (results.length) { %>
+                <form id="modForm" action="/modify/<%= results[0].name %>" method="GET">
+                    <div class="form-style">
+                        <label><span>Name</span><select name="modName">
+                                <% for (var i = 0; i < results.length; i++) { %>
+                            <option value="<%= results[i].name %>"><%= results[i].name %></option>
+                            <% } %>
+                        </select></label>
+                        <label><span></span><input type="submit" value="Modify" id="delSubmit"></label>
+                        <% }
+                        else { %>
+                        <h3>There are no Tokimon to modify</h3>                            
+                        <% } %>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     <body>
         <main> 
@@ -111,7 +131,6 @@
                     <td colspan="15">No Tokimon</td>
                 </tr>
                 <% } %>
-
             </table>            
         </main>
     </body>

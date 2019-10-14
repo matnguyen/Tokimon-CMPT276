@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
   // .get('/', (req, res) => res.render('pages/main'))
   // .get('/db', async (req, res) => {
-app.get('/', async (req, res) => {
+    app.get('/', async (req, res) => {
       try {
         const client = await pool.connect()
         const result = await client.query('SELECT * FROM Tokimon')
@@ -30,7 +30,8 @@ app.get('/', async (req, res) => {
         res.send("Error " + err)
       }
     })
-
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+    
 app.get('/tokimon/:name', (req, res) => {
   var query = `SELECT * FROM Tokimon WHERE name='${req.params.name}'`
   pool.query(query, (error, result) => {
@@ -64,7 +65,6 @@ app.post('/add', function(req, res) {
     res.send("Error " + err)
   }
 })
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 // Deleting Tokimon
 app.post('/del', function(req, res) {
@@ -77,3 +77,27 @@ app.post('/del', function(req, res) {
     res.send("Error " + err)
   }
 })
+
+// Modifying Tokimon
+app.get('/modify/:name', (req, res) => {
+  var query = `SELECT * FROM Tokimon WHERE name='${req.params.name}'`
+  pool.query(query, (error, result) => {
+    if (error) {
+      res.send(error)
+    } else {
+      var results = {'results': result.rows}
+      res.render('pages/modify', results)
+    }
+  })
+})
+
+app.post('/mod', function(req, res) {
+  try {
+    var query = req.body.tmpTextArea
+    pool.query(query)
+    res.redirect('/')
+  } catch (err) {
+    console.error(err)
+    res.send("Error " + err)
+  }
+}) 

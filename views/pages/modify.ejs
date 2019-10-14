@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <% if (results.length) { %>
+    <title>Tokimon Database - <%= results[0].name %></title>
+    <% }
+    else { %> 
+    <title>Tokimon Database</title>
+    <% } %>
+    <link rel="stylesheet" href="/stylesheets/modify.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/scripts/modify.js" defer></script>
+</head>
+
+<html lang="eng">
+    <div class="sidebar">
+        <button id="homeBtn">Home</button>
+    </div>
+
+    <body>
+        <main> 
+            <% if (results.length) { %>
+            <h1><%= results[0].name %></h1>
+            <% }
+            else { %> 
+            <h1>This Tokimon doesn't exist</h1>
+            <% } %>
+            
+            <table id="origData">
+                <tr>
+                    <th>Name</th>
+                    <th>Weight</th>
+                    <th>Height</th>
+                    <th>Fly</th>
+                    <th>Fight</th>
+                    <th>Fire</th>
+                    <th>Water</th> 
+                    <th>Electric</th>
+                    <th>Ice</th>
+                    <th>Total</th>
+                    <th>Trainer</th>
+                    <th>Gender</th>
+                    <th>Friendship</th>
+                    <th>Experience</th> 
+                </tr>
+                <% if (results.length) {
+                    for (var i = 0; i < results.length; i++) { %>
+                <tr>
+                    <td id="modName" contenteditable="true"><%= results[i].name %></td>
+                    <td id="modWeight" contenteditable="true"><%= results[i].weight %></td>
+                    <td id="modHeight" contenteditable="true"><%= results[i].height %></td>
+                    <td id="modFly" contenteditable="true"><%= results[i].fly %></td>
+                    <td id="modFight" contenteditable="true"><%= results[i].fight %></td>
+                    <td id="modFire" contenteditable="true"><%= results[i].fire %></td>
+                    <td id="modWater" contenteditable="true"><%= results[i].water %></td> 
+                    <td id="modElectric" contenteditable="true"><%= results[i].electric %></td>
+                    <td id="modIce" contenteditable="true"><%= results[i].ice %></td>
+                    <td><%= results[i].total %></td>
+                    <td id="modTrainer" contenteditable="true"><%= results[i].trainer %></td>
+                    <td id="modGender" contenteditable="true"><%= results[i].gender %></td>
+                    <td id="modFriendship" contenteditable="true"><%= results[i].friendship %></td>
+                    <td id="modExp" contenteditable="true"><%= results[i].experience %></td> 
+                </tr>
+                    <% }
+                }
+                else { %>
+                <tr>
+                    <td colspan="15">No Tokimon</td>
+                </tr>
+                <% } %>
+
+            </table>        
+            <form action="/mod" onsubmit="getContent()" method="POST">
+                <div class="form-style">
+                    <textarea id="tmpTextArea" name="tmpTextArea" style="display: none"></textarea>
+                    <input type="submit"/>
+                </div>
+            </form>    
+        </main>
+    </body>
+</html>
