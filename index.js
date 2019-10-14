@@ -65,3 +65,15 @@ app.post('/add', function(req, res) {
   }
 })
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+// Deleting Tokimon
+app.post('/del', function(req, res) {
+  try {
+    var query = `DELETE FROM Tokimon WHERE name='${req.body.delName}'`
+    pool.query(query)
+    res.redirect('/')
+  } catch (err) {
+    console.error(err)
+    res.send("Error " + err)
+  }
+})

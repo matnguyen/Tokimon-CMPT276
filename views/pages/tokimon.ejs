@@ -18,34 +18,6 @@
         <button id="homeBtn">Home</button>
     </div>
 
-    <div id="addModal" class="modal">
-        <div id="addModalContent" class="modalContent">
-            <h2>Add a Tokimon to the database</h2>
-            <form action="/add" method="POST">
-                <div class="form-style">
-                    <label><span>Name </span><input type="text" name="name" id="addName" placeholder="Name"></label>
-                    <label><span>Weight </span><input type="number" name="weight" id="addWeight" placeholder="0"></label>
-                    <label><span>Height </span><input type="number" name="height" id="addHeight" placeholder="0"></label>
-                    <label><span>Fly </span><input type="number" name="fly" id="addFly" placeholder="0"></label>
-                    <label><span>Fight </span><input type="number" name="fight" id="addFight" placeholder="0"></label>
-                    <label><span>Fire </span><input type="number" name="fire" id="addFire" placeholder="0"></label>
-                    <label><span>Water </span><input type="number" name="water" id="addWater" placeholder="0"></label>
-                    <label><span>Electric </span><input type="number" name="electric" id="addElectric" placeholder="0"></label>
-                    <label><span>Ice </span><input type="number" name="ice" id="addIce" placeholder="0"></label>
-                    <label><span>Trainer </span><input type="text" name="trainer" id="addTrainer" placeholder="Trainer"></label>
-                    <label><span>Friendship </span><input type="number" name="friendship" id="addFriendship" placeholder="0"></label>
-                    <label><span>Experience </span><input type="number" name="experience" id="addExperience" placeholder="0"></label>
-                    <label><span>Gender</span><select name="gender" id="addGender">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select></label>
-                    <label><span></span><input type="submit" value="Submit" id="addSubmit"></label>
-                </div>
-            </form>
-        </div>        
-    </div>
-
-
     <body>
         <main> 
             <% if (results.length) { %>
