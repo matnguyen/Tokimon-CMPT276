@@ -88,49 +88,53 @@
         <main> 
             <h1>Tokimon Database</h1>
             
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Weight</th>
-                    <th>Height</th>
-                    <th>Fly</th>
-                    <th>Fight</th>
-                    <th>Fire</th>
-                    <th>Water</th> 
-                    <th>Electric</th>
-                    <th>Ice</th>
-                    <th>Total</th>
-                    <th>Trainer</th>
-                    <th>Gender</th>
-                    <th>Friendship</th>
-                    <th>Experience</th> 
-                </tr>
-                <% if (results.length) {
-                    for (var i = 0; i < results.length; i++) { %>
-                <tr>
-                    <td><a href="tokimon/<%= results[i].name %>" title="More information">
-                        <%= results[i].name %></a></td>
-                    <td><%= results[i].weight %></td>
-                    <td><%= results[i].height %></td>
-                    <td><%= results[i].fly %></td>
-                    <td><%= results[i].fight %></td>
-                    <td><%= results[i].fire %></td>
-                    <td><%= results[i].water %></td> 
-                    <td><%= results[i].electric %></td>
-                    <td><%= results[i].ice %></td>
-                    <td><%= results[i].total %></td>
-                    <td><%= results[i].trainer %></td>
-                    <td><%= results[i].gender %></td>
-                    <td><%= results[i].friendship %></td>
-                    <td><%= results[i].experience %></td> 
-                </tr>
-                    <% }
-                }
-                else { %>
-                <tr>
-                    <td colspan="15">No Tokimon</td>
-                </tr>
-                <% } %>
+            <table id="database">
+                <thead>
+                    <tr>
+                        <th onclick="sort(0)" value="">Name</th>
+                        <th onclick="sort(1)" value="">Weight</th>
+                        <th onclick="sort(2)" value="">Height</th>
+                        <th onclick="sort(3)" value="">Fly</th>
+                        <th onclick="sort(4)" value="">Fight</th>
+                        <th onclick="sort(5)" value="">Fire</th>
+                        <th onclick="sort(6)" value="">Water</th> 
+                        <th onclick="sort(7)" value="">Electric</th>
+                        <th onclick="sort(8)" value="">Ice</th>
+                        <th onclick="sort(9)" value="">Total</th>
+                        <th onclick="sort(10)" value="">Trainer</th>
+                        <th onclick="sort(11)" value="">Gender</th>
+                        <th onclick="sort(12)" value="">Friendship</th>
+                        <th onclick="sort(13)" value="">Experience</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (results.length) {
+                        for (var i = 0; i < results.length; i++) { %>
+                    <tr>
+                        <td><a href="tokimon/<%= results[i].name %>" title="More information">
+                            <%= results[i].name %></a></td>
+                        <td><%= results[i].weight %></td>
+                        <td><%= results[i].height %></td>
+                        <td><%= results[i].fly %></td>
+                        <td><%= results[i].fight %></td>
+                        <td><%= results[i].fire %></td>
+                        <td><%= results[i].water %></td> 
+                        <td><%= results[i].electric %></td>
+                        <td><%= results[i].ice %></td>
+                        <td><%= results[i].total %></td>
+                        <td><%= results[i].trainer %></td>
+                        <td><%= results[i].gender %></td>
+                        <td><%= results[i].friendship %></td>
+                        <td><%= results[i].experience %></td> 
+                    </tr>
+                        <% }
+                    }
+                    else { %>
+                    <tr>
+                        <td colspan="15">No Tokimon</td>
+                    </tr>
+                    <% } %>
+                </tbody>
             </table>            
         </main>
     </body>
