@@ -86,8 +86,24 @@
     var curr = "<%= results[0].name %>"
     var results = "<%= all_results %>"
     var ctx = canvas.getContext("2d")
+    var max_height = 0
+    var max_weight = 0
 
+    // Determine max weight and height
     for (var i = 0; i < results.length; i++) {
-        
+        if (results[i].weight > max_weight) {
+            max_weight = results[i].weight
+        }
+        if (results[i].height > max_height) {
+            max_height = results[i].height
+        }
+    }
+
+    var x = 0
+    // Draw rectangles
+    for (var i = 0; i < results.length; i++) {
+        ctx.beginPath()
+        ctx.rect(0, 20, 50, 50)
+        ctx.stroke()
     }
 </script>
