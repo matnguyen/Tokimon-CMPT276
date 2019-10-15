@@ -70,7 +70,24 @@
                 </tr>
                 <% } %>
 
-            </table>            
+            </table>
+            
+            <canvas id="figures" height=100>                
+            </canvas>
         </main>
     </body>
 </html>
+
+
+<script>
+    var canvas = document.getElementById("figures");
+    var width = canvas.width;
+    var height = canvas.height;
+    var curr = "<%= results[0].name %>"
+    var results = "<%= all_results %>"
+    var ctx = canvas.getContext("2d")
+
+    for (var i = 0; i < results.length; i++) {
+        
+    }
+</script>

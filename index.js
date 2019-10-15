@@ -38,8 +38,14 @@ app.get('/tokimon/:name', (req, res) => {
     if (error) {
       res.send(error)
     } else {
-      var results = {'results': result.rows}
-      res.render('pages/tokimon', results)
+      pool.query('SELECT * FROM Tokimon', (error2, result2) => {
+        if (error2) {
+          res.send(error)
+        } else {
+          var results = {'results': result.rows, 'all_results': result2.rows}
+          res.render('pages/tokimon', results)
+        }
+      })
     }
   })
 })
