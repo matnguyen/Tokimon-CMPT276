@@ -6,8 +6,8 @@ var bodyParser = require('body-parser')
 
 const { Pool } = require('pg')
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL
-  // connectionString: 'postgres://postgres:495997@localhost/postgres'
+  // connectionString: process.env.DATABASE_URL
+  connectionString: 'postgres://postgres:495997@localhost/postgres'
 });
 
 app.use(bodyParser.urlencoded({ extended: false }))

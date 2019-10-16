@@ -21,7 +21,7 @@
     <body>
         <main> 
             <% if (results.length) { %>
-            <h1><%= results[0].name %></h1>
+            <h1 id="name"><%= results[0].name %></h1>
             <% }
             else { %> 
             <h1>This Tokimon doesn't exist</h1>
@@ -71,39 +71,24 @@
                 <% } %>
 
             </table>
-            
+            <table id="allData" style="display: none;">
+                    <% if (all_results.length) {
+                        for (var i = 0; i < all_results.length; i++) { %>
+                    <tr>
+                        <td><%= all_results[i].name %></td>
+                        <td><%= all_results[i].weight %></td>
+                        <td><%= all_results[i].height %></td>
+                    </tr>
+                        <% }
+                    }
+                    else { %>
+                    <tr>
+                        <td colspan="15">No Tokimon</td>
+                    </tr>
+                    <% } %>
+    
             <canvas id="figures" height=100>                
             </canvas>
         </main>
     </body>
 </html>
-
-
-<script>
-    var canvas = document.getElementById("figures");
-    var width = canvas.width;
-    var height = canvas.height;
-    var curr = "<%= results[0].name %>"
-    var results = "<%= all_results %>"
-    var ctx = canvas.getContext("2d")
-    var max_height = 0
-    var max_weight = 0
-
-    // Determine max weight and height
-    for (var i = 0; i < results.length; i++) {
-        if (results[i].weight > max_weight) {
-            max_weight = results[i].weight
-        }
-        if (results[i].height > max_height) {
-            max_height = results[i].height
-        }
-    }
-
-    var x = 0
-    // Draw rectangles
-    for (var i = 0; i < results.length; i++) {
-        ctx.beginPath()
-        ctx.rect(0, 20, 50, 50)
-        ctx.stroke()
-    }
-</script>
