@@ -131,7 +131,7 @@ function validate() {
     else if (parseInt(form['fly'].value) < 0 || parseInt(form['fight'].value) < 0 ||
              parseInt(form['fire'].value) < 0 || parseInt(form['water'].value) < 0 ||
              parseInt(form['electric'].value) < 0 || parseInt(form['ice'].value) < 0 ||
-             parseInt(form['friendship'].value) < 0 || parseInt(form['experience'].value) <= 0) {
+             parseInt(form['friendship'].value) < 0 || parseInt(form['experience'].value) < 0) {
         alert("All attributes should be positive numbers")
         return false
     }

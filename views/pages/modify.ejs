@@ -72,7 +72,7 @@
 
             </table>  
             <p>Click on a cell to modify its contents.</p>      
-            <form action="/mod" onsubmit="getContent()" method="POST">
+            <form action="/mod" onsubmit="return getContent()" method="POST">
                 <div class="form-style">
                     <textarea id="tmpTextArea" name="tmpTextArea" style="display: none"></textarea>
                     <input type="submit" value="Confirm"/>
