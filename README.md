@@ -20,4 +20,3 @@ Tokimon attributes (bolded are original attributes I added):
 * Added form validation (for adding and modifying Tokimon)
 * Added sorting of table by clicking column headers
 * Added display for each Tokimon page (with rectangles as defined in specification)
-* 
