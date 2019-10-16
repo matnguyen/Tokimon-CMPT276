@@ -102,3 +102,40 @@ function sort(n) {
     }
 }
 
+// Validates add form
+function validate() {
+    var form = document.forms["addForm"]
+    var iChars = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?";
+    if (form["name"].value.length == 0 || form["weight"].value.length == 0 ||
+        form["height"].value.length == 0 || form["fly"].value.length == 0 ||
+        form["fight"].value.length == 0 || form["fire"].value.length == 0 ||
+        form["electric"].value.length == 0 || form["water"].value.length == 0 ||
+        form["ice"].value.length == 0 || form["trainer"].value.length == 0 || 
+        form["friendship"].value.length == 0 || form["experience"].value.length == 0) {
+        alert("All fields must be filled")
+        return false
+    }
+    else if (/\d/.test(form["name"].value) || /\d/.test(form["trainer"].value)) {
+        alert("Names shouldn't contain any numbers!")
+        return false
+    }
+    else if (/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(form["name"].value) || 
+             /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(form["trainer"].value)) {
+        alert("Names have to be alphanumeric")
+        return false
+    }
+    else if (parseInt(form['weight'].value) <= 0 || parseInt(form['height']) <= 0) {
+        alert("Weight and height should be greater than 0")
+        return false
+    }
+    else if (parseInt(form['fly'].value) < 0 || parseInt(form['fight'].value) < 0 ||
+             parseInt(form['fire'].value) < 0 || parseInt(form['water'].value) < 0 ||
+             parseInt(form['electric'].value) < 0 || parseInt(form['ice'].value) < 0 ||
+             parseInt(form['friendship'].value) < 0 || parseInt(form['experience'].value) <= 0) {
+        alert("All attributes should be positive numbers")
+        return false
+    }
+    else {
+        return true
+    }
+}

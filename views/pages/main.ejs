@@ -18,7 +18,7 @@
     <div id="addModal" class="modal">
         <div id="addModalContent" class="modalContent">
             <h2>Add a Tokimon to the database</h2>
-            <form id="addForm" action="/add" method="POST">
+            <form id="addForm" action="/add" method="POST" onsubmit="return validate()">
                 <div class="form-style">
                     <label><span>Name </span><input type="text" name="name" id="addName" placeholder="Name"></label>
                     <label><span>Weight </span><input type="number" name="weight" id="addWeight" placeholder="0"></label>
